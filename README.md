@@ -1,4 +1,4 @@
-# 🎵 Mateus Music - Desafio de Desenvolvimento Web
+# 🎵 Kauan Music - Desafio de Desenvolvimento Web
 
 ## 🎯 Contexto do Projeto
 
