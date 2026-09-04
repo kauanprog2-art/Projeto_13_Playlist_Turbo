@@ -2,23 +2,25 @@ import streamlit as st
 import pandas as pd
 
 ### 1. Leia o Arquivo Dados_Artistas.csv e o Transforme em dataframe
+df = pd.read_parquet('Dados_artistas.parquet')
 
 
 ### 2. Coloque um titulo na pagina
-
+st.title('Dj churrasquito - As mais tocadas no spotify e YouTube')
 
 ### 3. Coloque subtitulo titulo na pagina
-
+st.subheader('bem vindo a radio do Dj churrasquito! Aqui voce encontra as musicas mais tocadas nas plataformas Spotify e YouTube.')
 
 ### 4. Coloque uma logo na sidebar(barra lateral)
-
+st.sidebar.image('logo3.png')
 
 ### 5. Não mexa abaixo, estamos criando uma selectbox, para selecionar o artista
-artistas = st.sidebar.selectbox('Selecione o Artista', df['Artist'].unique())
+artistas = st.sidebar.selectbox('Seleceione o artista', df['Artist'].unique())
 df_artista = df[df['Artist'] == artistas]
 
-### 6. Coloque Mais um subtitulo que mostre o artista que foi selecionado
 
+### 6. Coloque Mais um subtitulo que mostre o artista que foi selecionado
+st.subheader(F"O artista escolhido foi {artistas}")
 
 ### 7. Não mexa aqui, pois esse é o for que vai percorer o dataframe
 st.write('Aqui estão as músicas mais tocadas:')
